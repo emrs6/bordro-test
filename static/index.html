@@ -1,2 +1,71 @@
 <!doctype html>
-<html lang="tr"><head><meta charset="utf-8"><title>Maaş Hesaplayıcı</title></head><body></body></html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Maaş Hesaplayıcı 2026</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header>
+    <h1>Maaş Hesaplayıcı 2026</h1>
+    <p class="alt">Brütten nete, 12 ay. SGK, işsizlik, kümülatif gelir vergisi, asgari ücret istisnası ve damga vergisi dahil.</p>
+  </header>
+
+  <main>
+    <section class="ust">
+      <form id="form" class="girdiler" novalidate>
+        <label for="ocak-brut">Ocak brüt maaşı</label>
+        <input id="ocak-brut" inputmode="decimal" placeholder="örn. 50.000,00" autocomplete="off">
+
+        <h2>Zamlar</h2>
+        <div id="zamlar" class="satirlar"></div>
+        <button type="button" id="zam-ekle" class="ikincil">+ Zam ekle</button>
+
+        <h2>İkramiyeler</h2>
+        <div id="ikramiyeler" class="satirlar"></div>
+        <button type="button" id="ikramiye-ekle" class="ikincil">+ İkramiye ekle</button>
+
+        <button type="submit" class="birincil">Hesapla</button>
+        <p id="hata" class="hata" data-testid="hata-mesaji" role="alert" hidden></p>
+      </form>
+
+      <section class="sonuc" aria-live="polite">
+        <p id="bos" class="bos">Brüt maaşı girip <strong>Hesapla</strong>'ya basın.</p>
+        <div id="ay-detay" hidden>
+          <div class="etiket"><span data-testid="secili-ay"></span> · Net maaş</div>
+          <div class="net" data-testid="net-maas"></div>
+          <div id="cubuk" class="cubuk" aria-hidden="true"></div>
+          <div id="cubuk-aciklama" class="cubuk-aciklama"></div>
+          <p class="uyari" data-testid="dilim-uyarisi" hidden></p>
+          <table id="kesintiler" class="kesintiler"></table>
+        </div>
+      </section>
+    </section>
+
+    <section id="yillik" class="yillik" hidden>
+      <h2>Yıllık görünüm <span class="ipucu">(bir aya tıklayın)</span></h2>
+      <div id="grafik" class="grafik"></div>
+      <div class="lejant"><span class="kutu net-renk"></span>Net maaş <span class="kutu ikramiye-renk"></span>İkramiyeden kalan net (orantılı)</div>
+      <p class="toplamlar">Yıllık toplam net: <strong data-testid="yillik-net"></strong> · Yıllık gelir vergisi: <strong id="yillik-gv"></strong> · Yıllık SGK + işsizlik: <strong id="yillik-sgk"></strong></p>
+    </section>
+  </main>
+
+  <template id="zam-satiri">
+    <div class="satir">
+      <label>Zam ayı <select name="ay"></select></label>
+      <label>Zam oranı (%) <input name="oran" inputmode="decimal" placeholder="örn. 30"></label>
+      <button type="button" class="sil">Sil</button>
+    </div>
+  </template>
+  <template id="ikramiye-satiri">
+    <div class="satir">
+      <label>İkramiye ayı <select name="ay"></select></label>
+      <label>İkramiye tutarı (TL) <input name="tutar" inputmode="decimal" placeholder="örn. 50.000"></label>
+      <button type="button" class="sil">Sil</button>
+    </div>
+  </template>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
