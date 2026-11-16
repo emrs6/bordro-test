@@ -1,7 +1,7 @@
 # Tasarım: Türk Bordro Hesaplayıcısı ve Yapay Zekâ Destekli Test Takımı
 
 - **Ders:** CMPE 411, AI-Driven Software Testing and QA (Güz 2026, İstanbul Bilgi Üniversitesi)
-- **Öğrenci:** Emre Sülün (124200077). Konu OWN, 22 Ekim 2026'da onaylandı.
+- **Öğrenci:** Emre Sülün. Konu OWN, 22 Ekim 2026'da onaylandı.
 - **Tarih:** 22 Ekim 2026
 - **İlgili belgeler:** `Proje/Mevzuat_2026.md` (2026 parametreleri ve kaynakları), `Hafta_04/Donem_Projesi/Project_Brief.pdf`, `Project_Report_Template.docx`, `Example_Project_Report.pdf`, `Hafta_05/CMPE 411 Week 5.pdf`
 
