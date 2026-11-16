@@ -1,0 +1,8 @@
+fastapi==0.163.1
+uvicorn==0.54.0
+pytest==9.2.0
+pytest-cov==7.1.0
+httpx==0.28.1
+pytest-playwright==0.10.0
+mutmut==3.8.1
+anthropic==2.8.0
