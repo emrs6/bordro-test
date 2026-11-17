@@ -31,13 +31,13 @@ Her satır için beklenen değeri gereksinimdeki formülle elle hesaplayın. Ge�
 
 | R-no | Fonksiyon → çıktı | Girdi | Beklenen | Gerekçe |
 |---|---|---|---|---|
-| | | | | |
-| | | | | |
-| | | | | |
-| | | | | |
-| | | | | |
-| | | | | |
-| | | | | |
-| | | | | |
-| | | | | |
-| | | | | |
+| R2 | `bordro_hesapla` → hata | Ocak brüt 33.029,99 TL | "Ocak brüt maaşı en az 33.030,00 TL olmalı" | alt sınırın 1 kuruş altı |
+| R2 | `bordro_hesapla` → başarılı | Ocak brüt 33.030,00 TL | Ocak net 28.075,50 TL | tam alt sınır |
+| R2 | `bordro_hesapla` → başarılı | Ocak brüt 33.030,01 TL | Ocak net 28.075,51 TL | alt sınırın 1 kuruş üstü |
+| R2 | `bordro_hesapla` → başarılı | Ocak brüt 9.999.999,99 TL | Ocak net 6.324.307,72 TL | üst sınırın 1 kuruş altı |
+| R2 | `bordro_hesapla` → başarılı | Ocak brüt 10.000.000,00 TL | Ocak net 6.324.307,73 TL | tam üst sınır |
+| R2 | `bordro_hesapla` → hata | Ocak brüt 10.000.000,01 TL | "Ocak brüt maaşı en fazla 10.000.000,00 TL olabilir" | üst sınırın 1 kuruş üstü |
+| R4 | `bordro_hesapla` → başarılı | Ocak brüt 33.030,00 TL, Şubat zammı %99,99 | Şubat brüt 66.056,70 TL | zam üst sınırının 0,01 puan altı |
+| R4 | `bordro_hesapla` → başarılı | Ocak brüt 33.030,00 TL, Şubat zammı %100,00 | Şubat brüt 66.060,00 TL | tam zam üst sınırı |
+| R4 | `bordro_hesapla` → hata | Ocak brüt 33.030,00 TL, Şubat zammı %100,01 | "Zam oranı 0'dan büyük ve en fazla 100 olmalı" | zam üst sınırının 0,01 puan üstü |
+| R6 | `bordro_hesapla` → hata | Ocak brüt 33.030,00 TL, Ocak ikramiyesi 0,00 TL | "İkramiye tutarı 0'dan büyük olmalı" | ikramiye alt sınırında geçersiz değer |
